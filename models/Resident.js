@@ -22,12 +22,8 @@ const residentSchema = new Schema({
             }
         },
     },
-    bioPage: {
-        type: String,
-        required: true
-    },
     thoughts: [thoughtSchema],
-    friends: [ResidentsSchema],
+    friends: [ResidentSchema],
     friendCount: friends.length + 1;
 }, {
     toJSON: {
