@@ -22,19 +22,13 @@ This project used the technologies Node.js, Express.js, MongoDB, Mongoose, and J
 ## Mockup
 
 --
-<img src="assets/fas1.png" alt="mysql command" width="400"/>
+<img src="assets/mau1.png" alt="command 1" width="400"/>
 
 --
-<img src="assets/fas2.png" alt="schema command" width="400"/>
+<img src="assets/mau2.png" alt="command 2" width="400"/>
 
 --
-<img src="assets/fas3.png" alt="seeds command" width="400"/>
-
---
-<img src="assets/fas4.png" alt="node command" width="400"/>
-
---
-<img src="assets/fas5.png" alt="port listening" width="400"/>
+<img src="assets/mau3.png" alt="command 3" width="400"/>
 
 ## Resources Used
 
