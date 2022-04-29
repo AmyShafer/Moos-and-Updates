@@ -39,10 +39,10 @@ This project used the technologies Node.js, Express.js, MongoDB, Mongoose, and J
 ## Resources Used
 
 I made an error when using GitHub but I was able to self-correct using this StackOverflow article.
-[![GitHub Help](https://img.shields.io/badge/Git-Hub-grey)](https://stackoverflow.com/questions/51421420/accidentally-initialised-git-repo-for-my-whole-desktop)
+[![](https://img.shields.io/badge/Git-Hub-pink)](https://stackoverflow.com/questions/51421420/accidentally-initialised-git-repo-for-my-whole-desktop)
 
 There were hints about what to look up in the comments of the mini project that prefaced this homework assignment. The hints lead me to this information in the MongoDB Docs.
-[![Mongo Docs](https://img.shields.io/badge/Mongo-DB-bright-green)](https://www.mongodb.com/docs/manual/reference/method/ObjectId/)
+[![](https://img.shields.io/badge/Mongo-DB-green)](https://www.mongodb.com/docs/manual/reference/method/ObjectId/)
 
 I needed to read up on some particulars of Mongoose.
 [![](https://img.shields.io/badge/Mon-goose-yellow)](https://kb.objectrocket.com/mongo-db/understanding-the-mongoose-__v-field-1011)
