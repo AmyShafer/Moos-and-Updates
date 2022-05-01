@@ -1,11 +1,11 @@
 const router = require('express').Router();
 
 const {
-    getReactions,
-    getSingleReaction,
-    createReaction,
-    updateReaction,
-    deleteCourse,
+  getReactions,
+  getSingleReaction,
+  createReaction,
+  updateReaction,
+  deleteReaction
 } = require('../../controllers/reactionRoute.js');
 
 // /api/reaction

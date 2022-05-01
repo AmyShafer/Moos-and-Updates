@@ -6,7 +6,7 @@ const {
 } = require('../models');
 const {
     getUserName,
-    getEmail
+    getEmail,
     getThoughts,
     getFriends
 } = require('./data');
