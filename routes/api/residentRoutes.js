@@ -5,7 +5,9 @@ const {
     createResident,
     deleteResident,
     addThought,
-    removeThought
+    removeThought,
+    addFriend,
+    removeFriend
 } = require('../../controllers/residentController');
 
 // /api/residents
@@ -19,5 +21,8 @@ router.route('/:residentId/thoughts').post(addThought);
 
 // /api/residents/:residentId/thoughts/:thoughtId
 router.route('/:residentId/thoughts/:thoughtId').delete(removeThought);
+
+// /api/users/:userId/friends/:friendId
+router.route('/:residentId/friends/:friendId').post(addFriend).delete(removeFriend);
 
 module.exports = router;

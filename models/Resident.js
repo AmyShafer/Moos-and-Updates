@@ -4,7 +4,7 @@ const {
 } = require('mongoose');
 const thoughtSchema = require('./Thought');
 
-// Schema to create Student model
+// Schema to create Resident model
 const residentSchema = new Schema({
     username: {
         type: String,
@@ -24,13 +24,26 @@ const residentSchema = new Schema({
     },
     thoughts: [thoughtSchema],
     friends: [ResidentSchema],
-    friendCount: friends.length + 1;
 }, {
     toJSON: {
-        getters: true,
-    }
+        virtuals: true,
+    },
+    id: false,
 });
 
+// Create a virtual property `friendCount` that retrieves the length of the user's friends array field on query.
+residentSchema
+    .virtual('friendCount')
+    // Getter
+    .get(function () {
+        return `${this.length + 1}`;
+    })
+    // Setter to set the friend count
+    .set(function (v) {
+        const friendCount = this.length + 1;
+    });
+
+// Initialize the Resident model
 const Resident = model('Resident', residentSchema);
 
 module.exports = Resident;
