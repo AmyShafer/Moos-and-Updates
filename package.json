@@ -1,12 +1,22 @@
 {
   "name": "moos-and-updates",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mongoose back-end project - Develop",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
+    "scripts": {
+      "start": "node index",
+      "dev": "nodemon index",
+      "seed": "node utils/seed"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^6.0.13"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.15"
+    }
+}
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AmyShafer/Moos-and-Updates.git"
