@@ -2,7 +2,7 @@ const {
     Schema,
     model
 } = require('mongoose');
-const Thought = require('./Thought')
+const reactionSchema = require('./Reaction');
 
 // Schema to create Thought Model
 const thoughtSchema = new Schema({
@@ -36,18 +36,18 @@ const thoughtSchema = new Schema({
 });
 
 // Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
-reactionSchema
+thoughtSchema
     .virtual('reactionCount')
     // Getter
     .get(function () {
-      return `${this.length + 1}`;    
+        return this.reactions.length;
     })
     // Setter to set the reaction count
     .set(function (v) {
-        const reactionCount = this.length + 1;
+        let reactionCount = this.reactionCount.length;
     })
 
 // Initialize the Thought model
-const Thought = model('Thought', ThoughtSchema);
+const Thought = model('Thought', thoughtSchema);
 
 module.exports = Thought;

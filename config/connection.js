@@ -3,7 +3,7 @@ const {
     connection
 } = require('mongoose');
 
-const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:3001/barnBudsDB';
+const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:3001/woodstock';
 
 connect(connectionString, {
     useNewUrlParser: true,

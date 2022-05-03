@@ -151,18 +151,17 @@ const thoughtController = {
                 new: true
             })
             .then((thoughtData => {
-                    !thoughtData ?
-                        res.status(404).json({
-                            message: 'No thought with this id!'
-                        }) :
-                        res.json(thoughtData);
-                })
-                .catch((err) => {
-                    console.log(err);
-                    res.status(500).json(err);
-                })
-            ),
-    }
+                !thoughtData ?
+                    res.status(404).json({
+                        message: 'No thought with this id!'
+                    }) :
+                    res.json(thoughtData);
+            }))
+            .catch((err) => {
+                console.log(err);
+                res.status(500).json(err);
+            })
+    },
 };
 
 module.exports = thoughtController;

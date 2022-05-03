@@ -2,7 +2,6 @@ const {
     Schema,
     model
 } = require('mongoose');
-const thoughtSchema = require('./Thought');
 
 // Schema to create Resident model
 const residentSchema = new Schema({
@@ -22,8 +21,14 @@ const residentSchema = new Schema({
             }
         },
     },
-    thoughts: [thoughtSchema],
-    friends: [ResidentSchema],
+    thoughts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Thought',
+    }, ],
+    friends: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+    }, ],
 }, {
     toJSON: {
         virtuals: true,
@@ -36,11 +41,11 @@ residentSchema
     .virtual('friendCount')
     // Getter
     .get(function () {
-        return `${this.length + 1}`;
+        return this.friends.length;
     })
     // Setter to set the friend count
     .set(function (v) {
-        const friendCount = this.length + 1;
+        const friendCount = this.friends.length;
     });
 
 // Initialize the Resident model

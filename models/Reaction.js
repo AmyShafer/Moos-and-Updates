@@ -2,14 +2,14 @@ const {
     Schema,
     Types
 } = require('mongoose');
-const date 
+//const date 
 
 const reactionSchema = new Schema({
     reactionId: {
         // Use Mongoose's ObjectId data type
-        type: Schema.Types.ofObjectId,
+        type: Schema.Types.ObjectId,
         // Default value is set to a new ObjectId
-        default: () => new Types.ofObjectId(),
+        default: () => new Types.ObjectId(),
     },
     reactionBody: {
         // String
