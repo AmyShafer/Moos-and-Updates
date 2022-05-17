@@ -3,7 +3,7 @@ const {
     Resident,
     Thought,
     Reaction
-} = require('../models');
+} = require('./models');
 const {
     getUserName,
     getEmail,
