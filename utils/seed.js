@@ -33,9 +33,9 @@ connection.once('open', async () => {
         //const friends = getFriends();
 
         residents.push({
-            userName,
-            email,
-            thoughts,
+            userName: userName,
+            email: email,
+            thoughts: thoughts,
             //friends,
         });
     }
