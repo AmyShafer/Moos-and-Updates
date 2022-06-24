@@ -11,10 +11,10 @@ const {
 // /api/residents
 router.route('/').get(getResidents).post(createResident);
 
-// /api//residents/:residentId
+// /api/residents/:residentId
 router.route('/:residentId').get(getSingleResident).delete(deleteResident);
 
-// /api/users/:userId/friends/:friendId
+// /api/residentId/:friends/:friendId
 router.route('/:residentId/friends/:friendId').post(addFriend).delete(removeFriend);
 
 module.exports = router;
