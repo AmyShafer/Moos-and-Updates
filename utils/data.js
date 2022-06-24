@@ -39,7 +39,10 @@ const animals = [
     "duck",
     "geese",
     "dog",
-    "cat"
+    "cat",
+    "llama",
+    "sheep",
+    "horse"
 ];
 
 const thoughts = [
@@ -65,12 +68,12 @@ const thoughts = [
 // get a random element given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-// Get a random user name
-const getUserName = () => {
-    let userName = getRandomArrItem(names)
-    let index = names.indexOf(userName)
+// Get a random Resident name
+const getResidentName = () => {
+    let residentName = getRandomArrItem(names)
+    let index = names.indexOf(residentName)
     names.splice(index, 1)
-    return `${userName}`
+    return `${residentName}`
 };
 
 // Get email
@@ -107,7 +110,7 @@ const getThoughts = (int) => {
 
 // export the function for use in seed.js
 module.exports = {
-    getUserName,
+    getResidentName,
     getEmail,
     getThoughts,
     getFriends

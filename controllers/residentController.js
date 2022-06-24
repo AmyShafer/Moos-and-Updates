@@ -2,9 +2,6 @@ const {
     Resident,
     Thought
 } = require('../models');
-const {
-    getUserName
-} = require('../utils/data');
 
 const residentController = {
     // Get all residents
@@ -77,7 +74,7 @@ const residentController = {
     // Add a friend
     addFriend(req, res) {
         Resident.findOneAndUpdate({
-                _id: req.params.userId
+                _id: req.params.residentId
             }, {
                 $addToSet: {
                     friends: req.params.friendId

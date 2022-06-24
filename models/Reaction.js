@@ -19,7 +19,7 @@ const reactionSchema = new Schema({
         // 280 character maximum
         maxLength: 280,
     },
-    username: {
+    residentName: {
         // String
         type: String,
         // Required
@@ -39,5 +39,3 @@ const reactionSchema = new Schema({
     id: false,
 });
 
-// Schema Settings:
-// This will not be a model, but rather will be used as the reaction field's subdocument schema in the Thought model.

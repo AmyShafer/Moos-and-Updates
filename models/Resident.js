@@ -5,7 +5,7 @@ const {
 
 // Schema to create Resident model
 const residentSchema = new Schema({
-    username: {
+    residentName: {
         type: String,
         unique: true,
         required: true,

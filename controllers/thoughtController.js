@@ -32,7 +32,7 @@ const thoughtController = {
         Thought.create(req.body)
             .then((thoughtData) => {
                 return Resident.findOneAndUpdate({
-                    _id: req.body.userId
+                    _id: req.body.residentId
                 }, {
                     $push: {
                         thoughts: thoughtData._id

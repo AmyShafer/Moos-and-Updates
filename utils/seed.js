@@ -5,7 +5,7 @@ const {
     Reaction
 } = require('../models');
 const {
-    getUserName,
+    getResidentName,
     getEmail,
     getThoughts,
     getFriends
@@ -28,13 +28,13 @@ connection.once('open', async () => {
 
     // loop 10 times to add residents to the residents array
     for (let i = 0; i < 10; i++) {
-        const userName = getUserName();
+        const residentName = getResidentName();
         const email = getEmail();
         const thoughts = getThoughts(10);
         //const friends = getFriends();
 
         residents.push({
-            username: userName,
+            residentName: residentName,
             email: email,
             thoughts: thoughts,
             //friends,
