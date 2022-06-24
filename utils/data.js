@@ -67,29 +67,18 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 // Get a random user name
 const getUserName = () => {
-    let userName = getRandomArrItem(names);
-    let index = names.indexOf(userName);
-    names.splice(index, 1);
-    `${userName}`;
+    let userName = getRandomArrItem(names)
+    let index = names.indexOf(userName)
+    names.splice(index, 1)
+    return `${userName}`
 };
 
 // Get email
 const getEmail = () => {
-    let randArrItem = getRandomArrItem(animals);
-    let index = animals.indexOf(randArrItem);
-    animals.splice(index, 1);
-    return `${getRandomArrItem(animals)}@woodstock.org`
-};
-
-// Get thoughts
-const getThoughts = (int) => {
-    const results = [];
-    for (let i = 0; i < int; i++) {
-        results.push({
-            newThought: getRandomArrItem(thoughts)
-        });
-    }
-    return results;
+    let randArrItem = getRandomArrItem(animals)
+    let index = animals.indexOf(randArrItem)
+    animals.splice(index, 1)
+    return `${randArrItem}@woodstock.org`
 };
 
 // Get friends

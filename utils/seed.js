@@ -23,6 +23,7 @@ connection.once('open', async () => {
     await Resident.deleteMany({});
 
     // create empty array to hold residents
+    // create empty array to hold residents
     const residents = [];
 
     // loop 10 times to add residents to the residents array
@@ -33,7 +34,7 @@ connection.once('open', async () => {
         //const friends = getFriends();
 
         residents.push({
-            userName: userName,
+            username: userName,
             email: email,
             thoughts: thoughts,
             //friends,
