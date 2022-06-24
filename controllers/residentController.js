@@ -24,11 +24,11 @@ const residentController = {
         Resident.findOne({
                 _id: req.params.residentId
             })
-            .select('-__v')
+            // .select('-__v')
             .populate('friends')
             .populate('thoughts')
             .then((residentData) => {
-                !resident ?
+                !residentData ?
                     res.status(404).json({
                         message: "No resident with that ID"
                     }) :
@@ -55,23 +55,24 @@ const residentController = {
                 res.status(404).json({
                     message: 'No such resident exists'
                 }) :
-                res.json(residentData)
+                //     res.json(residentData)
+                // )
+                // delete thoughts
+                Thought.deleteMany({
+                    _id: {
+                        $in: residentData.thoughts
+                    }
+                })
+                .then(() => {
+                    res.json({
+                        message: 'Resident and their thoughts have been deleted!'
+                    });
+                })
+                .catch((err) => {
+                    console.log(err);
+                    res.status(500).json(err);
+                })
             )
-        // delete thoughts
-        Thought.deleteMany({
-                _id: {
-                    $in: 'No resident with this id!'
-                }
-            })
-            .then(() => {
-                res.json({
-                    message: 'Resident and their thoughts have been deleted!'
-                });
-            })
-            .catch((err) => {
-                console.log(err);
-                res.status(500).json(err);
-            });
     },
     // Add a friend
     addFriend(req, res) {
@@ -123,64 +124,7 @@ const residentController = {
                 console.log(err);
                 res.status(500).json(err);
             })
-    },
-    // add friend from resident
-    addFriend(req, res) {
-        Resident.create(req.body)
-            .then((friend) => {
-                return Resident.findOneAndUpdate({
-                    _id: req.body.residentId
-                }, {
-                    $addToSet: {
-                        friends: friend._id
-                    }
-                }, );
-            })
-            .then((friend) =>
-                !friend ?
-                res.status(404).json({
-                    message: 'Friend added, but found no resident with that ID',
-                }) :
-                res.json('Friend added!')
-            )
-            .catch((err) => {
-                console.log(err);
-                res.status(500).json(err);
-            })
-    },
-    // remove friend from resident
-    removeFriend(req, res) {
-        Resident.findOneAndRemove({
-                _id: req.params.friendId
-            })
-            .then((friend) =>
-                !friend ?
-                res.status(404).json({
-                    message: 'No friend with this id!'
-                }) :
-                Resident.findOneAndUpdate({
-                    videos: req.params.friendId
-                }, {
-                    $pull: {
-                        friends: req.params.friendId
-                    }
-                }, {
-                    new: true
-                })
-            )
-            .then((friend) =>
-                !friend ?
-                res
-                .status(404)
-                .json({
-                    message: 'Friend added but no resident with this id!'
-                }) :
-                res.json({
-                    message: 'Friend added!'
-                })
-            )
-            .catch((err) => res.status(500).json(err));
-    },
+    }
 };
 
 module.exports = residentController;

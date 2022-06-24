@@ -17,7 +17,7 @@ const residentSchema = new Schema({
         unique: true,
         validate: {
             validator: function (v) {
-                return /^[A-Z0-9+_.-]+@[A-Z0-9.-]+$/.test(v);
+                return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             }
         },
     },
@@ -27,7 +27,7 @@ const residentSchema = new Schema({
     }, ],
     friends: [{
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'Resident',
     }, ],
 }, {
     toJSON: {

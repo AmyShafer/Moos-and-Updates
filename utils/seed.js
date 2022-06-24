@@ -3,7 +3,7 @@ const {
     Resident,
     Thought,
     Reaction
-} = require('./models');
+} = require('../models');
 const {
     getUserName,
     getEmail,
@@ -30,13 +30,13 @@ connection.once('open', async () => {
         const userName = getUserName();
         const email = getEmail();
         const thoughts = getThoughts(10);
-        const friends = getFriends();
+        //const friends = getFriends();
 
         residents.push({
             userName,
             email,
             thoughts,
-            friends,
+            //friends,
         });
     }
 
