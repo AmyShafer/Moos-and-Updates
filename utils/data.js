@@ -94,6 +94,17 @@ const getFriends = (names) => {
     return friends;
 };
 
+// Get thoughts
+const getThoughts = (int) => {
+    const results = [];
+    for (let i = 0; i < int; i++) {
+        results.push({
+            newThought: getRandomArrItem(thoughts)
+        });
+    }
+    return results;
+};
+
 // export the function for use in seed.js
 module.exports = {
     getUserName,
