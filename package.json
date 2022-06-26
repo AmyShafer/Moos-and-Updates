@@ -4,7 +4,7 @@
   "description": "Mongoose back-end project - Develop",
   "main": "server.js",
   "scripts": {
-    "start": "node index",
+    "start": "node server",
     "dev": "nodemon index",
     "seed": "node utils/seed"
   },

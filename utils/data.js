@@ -98,9 +98,9 @@ const getFriends = (names) => {
 };
 
 // Get thoughts
-const getThoughts = (int) => {
+const getThoughts = () => {
     const results = [];
-    for (let i = 0; i < int; i++) {
+    for (let i = 0; i < 5; i++) {
         results.push({
             newThought: getRandomArrItem(thoughts)
         });

@@ -43,7 +43,7 @@ thoughtSchema
         return this.reactions.length;
     })
     // Setter to set the reaction count
-    .set(function (v) {
+    .set(function () {
         let reactionCount = this.reactionCount.length;
     })
 

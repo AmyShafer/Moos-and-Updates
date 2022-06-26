@@ -3,6 +3,7 @@ const {
     getResidents,
     getSingleResident,
     createResident,
+    updateResident,
     deleteResident,
     addFriend,
     removeFriend
@@ -12,7 +13,7 @@ const {
 router.route('/').get(getResidents).post(createResident);
 
 // /api/residents/:residentId
-router.route('/:residentId').get(getSingleResident).delete(deleteResident);
+router.route('/:residentId').get(getSingleResident).put(updateResident).delete(deleteResident);
 
 // /api/residentId/:friends/:friendId
 router.route('/:residentId/friends/:friendId').post(addFriend).delete(removeFriend);

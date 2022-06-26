@@ -42,6 +42,23 @@ const residentController = {
             .then((residentData) => res.json(residentData))
             .catch((err) => res.status(500).json(err));
     },
+    // update a resident
+    updateResident(req, res) {
+        Resident.findOneAndUpdate({
+                _id: req.params.residentId
+            }, {
+                req
+            }, {
+                new: true
+            })
+            .then((residentData) => {
+                !resideData ?
+                    res.status(404).json({
+                        message: 'No such resident exists'
+                    }) :
+                    res.json(residentData)
+            })
+    },
     // Delete a resident 
     deleteResident(req, res) {
         Resident.findOneAndDelete({
