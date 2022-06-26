@@ -47,12 +47,13 @@ const residentController = {
         Resident.findOneAndUpdate({
                 _id: req.params.residentId
             }, {
-                req
+                $set: req.body
+
             }, {
                 new: true
             })
             .then((residentData) => {
-                !resideData ?
+                !residentData ?
                     res.status(404).json({
                         message: 'No such resident exists'
                     }) :

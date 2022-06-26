@@ -27,7 +27,7 @@ const thoughtSchema = new Schema({
     reactions: [{
         type: Schema.Types.ObjectId,
         ref: 'Resident'
-    }, ]
+    },]
 }, {
     toJSON: {
         virtuals: true,
