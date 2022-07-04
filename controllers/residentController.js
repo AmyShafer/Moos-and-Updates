@@ -8,7 +8,7 @@ const residentController = {
     getResidents(req, res) {
         Resident.find()
             .select('-__v')
-            .then(residentData => {
+            .then((residentData) => {
                 res.json(residentData);
             })
             .catch((err) => {
@@ -21,20 +21,17 @@ const residentController = {
         Resident.findOne({
                 _id: req.params.residentId
             })
-            // .select('-__v')
+            .select('-__v')
             .populate('friends')
-            .populate('thoughts')
+            .populate('residentThoughts')
             .then((residentData) => {
                 !residentData ?
                     res.status(404).json({
                         message: "No resident with that ID"
                     }) :
-                    res.json(residentData)
+                    res.json(residentData);
             })
-            .catch((err) => {
-                console.log(err);
-                return res.status(500).json(err);
-            });
+            .catch((err) => res.status(500).json(err));
     },
     // create a new resident
     createResident(req, res) {
@@ -59,13 +56,17 @@ const residentController = {
                     }) :
                     res.json(residentData)
             })
+            .catch((err) => {
+                console.log(err);
+                res.status(500).json(err);
+            });
     },
     // Delete a resident 
     deleteResident(req, res) {
         Resident.findOneAndDelete({
                 _id: req.params.residentId
             })
-            .then((residentData) =>
+            .then((residentData) => 
                 !residentData ?
                 res.status(404).json({
                     message: 'No such resident exists'
@@ -75,7 +76,7 @@ const residentController = {
                 // delete thoughts
                 Thought.deleteMany({
                     _id: {
-                        $in: residentData.thoughts
+                        $in: residentData.residentThoughts
                     }
                 })
                 .then(() => {

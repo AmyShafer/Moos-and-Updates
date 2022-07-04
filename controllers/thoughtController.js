@@ -18,13 +18,13 @@ const thoughtController = {
         Thought.findOne({
                 _id: req.params.thoughtId
             })
-            .then((thoughtData) =>
+            .then((thoughtData) => {
                 !thoughtData ?
-                res.status(404).json({
-                    message: "No thoughts here with that ID"
-                }) :
-                res.json(thoughtData)
-            )
+                    res.status(404).json({
+                        message: "No thoughts here with that ID"
+                    }) :
+                    res.json(thoughtData)
+            })
             .catch((err) => res.status(500).json(err));
     },
     // Create a thought
@@ -35,7 +35,7 @@ const thoughtController = {
                     _id: req.body.residentId
                 }, {
                     $push: {
-                        thoughts: thoughtData._id
+                        residentThoughts: thoughtData._id
                     }
                 }, {
                     new: true
@@ -70,10 +70,10 @@ const thoughtController = {
                     }),
 
                     Resident.findOneAndUpdate({
-                        thoughts: req.params.thoughtId
+                        residentThoughts: req.params.thoughtId
                     }, {
                         $pull: {
-                            thoughts: req.params.thoughtId
+                            residentThoughts: req.params.thoughtId
                         }
                     }, {
                         new: true

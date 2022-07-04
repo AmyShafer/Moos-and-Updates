@@ -21,7 +21,7 @@ const residentSchema = new Schema({
             }
         },
     },
-    thoughts: [{
+    residentThoughts: [{
         type: Schema.Types.ObjectId,
         ref: 'Thought',
     }, ],

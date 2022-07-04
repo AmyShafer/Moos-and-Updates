@@ -6,11 +6,9 @@ const reactionSchema = require('./Reaction');
 
 // Schema to create Thought Model
 const thoughtSchema = new Schema({
-    thoughtId: {
+    residentThoughts: {
         type: String,
-        required: true,
-        minLength: 1,
-        maxLength: 280
+        required: true
     },
     createdAt: {
         // Date
@@ -27,7 +25,7 @@ const thoughtSchema = new Schema({
     reactions: [{
         type: Schema.Types.ObjectId,
         ref: 'Resident'
-    },]
+    }, ]
 }, {
     toJSON: {
         virtuals: true,

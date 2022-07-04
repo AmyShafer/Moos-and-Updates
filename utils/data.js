@@ -47,7 +47,7 @@ const animals = [
 
 const thoughts = [
     "The pasture is breeze couldn\'t be more perfect",
-    "Moo!",
+    "I think I will head down to the woods.",
     "This hay hits the spot!",
     "Rain\'s coming! Let me lay down.",
     "I like this person...I think I\'ll try for a neck scratch!",
@@ -62,7 +62,14 @@ const thoughts = [
     "Snow\'s back!",
     "Fresh fruit, hooray!",
     "This person is my new favorite person!",
-    "Someone new is here!"
+    "Someone new is here!",
+    "What is that? Time to investigate!",
+    "I think I will go for a nap...",
+    "Thank goodness for the fresh water!",
+    "Who is this now?",
+    "Sorry, I need some down time at the moment.",
+    "Better go check out the barn. I hear there's a new resident there.",
+    "The humans are playing music for us today!"
 ];
 
 // get a random element given an array
@@ -70,18 +77,18 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 // Get a random Resident name
 const getResidentName = () => {
-    let residentName = getRandomArrItem(names)
-    let index = names.indexOf(residentName)
-    names.splice(index, 1)
-    return `${residentName}`
+    let residentName = getRandomArrItem(names);
+    let index = names.indexOf(residentName);
+    names.splice(index, 1);
+    return `${residentName}`;
 };
 
 // Get email
 const getEmail = () => {
-    let randArrItem = getRandomArrItem(animals)
-    let index = animals.indexOf(randArrItem)
-    animals.splice(index, 1)
-    return `${randArrItem}@woodstock.org`
+    let randArrItem = getRandomArrItem(animals);
+    let index = animals.indexOf(randArrItem);
+    animals.splice(index, 1);
+    return `${randArrItem}@woodstock.org`;
 };
 
 // Get friends
@@ -99,13 +106,8 @@ const getFriends = (names) => {
 
 // Get thoughts
 const getThoughts = () => {
-    const results = [];
-    for (let i = 0; i < 5; i++) {
-        results.push({
-            newThought: getRandomArrItem(thoughts)
-        });
-    }
-    return results;
+    let freshThought = getRandomArrItem(thoughts);
+    return freshThought;
 };
 
 // export the function for use in seed.js
