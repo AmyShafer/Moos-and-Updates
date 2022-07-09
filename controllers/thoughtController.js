@@ -18,6 +18,7 @@ const thoughtController = {
         Thought.findOne({
                 _id: req.params.thoughtId
             })
+            .select('-__v')
             .then((thoughtData) => {
                 !thoughtData ?
                     res.status(404).json({

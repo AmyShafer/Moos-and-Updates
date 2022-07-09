@@ -21,6 +21,10 @@ const thoughtSchema = new Schema({
         type: String,
         required: true
     },
+    residentId: {
+        type: String,
+        required: true
+    },
     // Array of nested documents created with the reactionSchema
     reactions: [{
         type: Schema.Types.ObjectId,

@@ -22,29 +22,23 @@ connection.once('open', async () => {
     // drop existing residents
     await Resident.deleteMany({});
 
-    // create empty array to hold thoughts
-    const residentThoughts = [];
-
     // create empty array to hold residents
     const residents = [];
 
-    const currentThoughts = getThoughts();
-
-    // loop 5 times to add thoughts
-    for (let i = 0; i < 5; i++) {
-        // const friends = getFriends();
-        residentThoughts.push(currentThoughts);
-    }
+    // create empty array to hold residents
+    // const residentThoughts = getThoughts(5);
 
     // loop 10 times to add residents to the residents array
     for (let i = 0; i < 10; i++) {
         const residentName = getResidentName();
         const email = getEmail();
+        // // create thoughts
+        const residentThoughts = getThoughts(5);
 
         residents.push({
-            residentName: residentName,
-            email: email,
-            currentThoughts: residentThoughts,
+            residentName,
+            email,
+            residentThoughts,
             //friends,
         });
     }
@@ -52,8 +46,11 @@ connection.once('open', async () => {
     // add residents to the collection and await the results
     await Resident.collection.insertMany(residents);
 
-    // add thoughts to the collection and await the results
-    await Thought.collection.insertMany(residentThoughts);
+    // // add thoughts to the collection and await the results
+    await Thought.collection.insertOne({
+        test: 'test',
+        residents: [...residents]
+    });
 
     // log out the seed data to indicate what should appear in the database
     console.table(residents);

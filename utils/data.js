@@ -105,9 +105,12 @@ const getFriends = (names) => {
 };
 
 // Get thoughts
-const getThoughts = () => {
-    let freshThought = getRandomArrItem(thoughts);
-    return freshThought;
+const getThoughts = (int) => {
+    let freshThoughts = [];
+    for (let i = 0; i < int; i++) {
+        freshThoughts.push(getRandomArrItem(thoughts));
+    }
+    return freshThoughts;
 };
 
 // export the function for use in seed.js
