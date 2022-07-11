@@ -48,7 +48,7 @@ connection.once('open', async () => {
 
     // // add thoughts to the collection and await the results
     await Thought.collection.insertOne({
-        test: 'test',
+        website: 'https://woodstocksanctuary.org/meet-the-animals',
         residents: [...residents]
     });
 

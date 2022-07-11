@@ -28,7 +28,7 @@ const thoughtSchema = new Schema({
     // Array of nested documents created with the reactionSchema
     reactions: [{
         type: Schema.Types.ObjectId,
-        ref: 'Resident'
+        ref: 'Thought'
     }, ]
 }, {
     toJSON: {

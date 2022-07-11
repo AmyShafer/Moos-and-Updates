@@ -66,7 +66,7 @@ const residentController = {
         Resident.findOneAndDelete({
                 _id: req.params.residentId
             })
-            .then((residentData) => 
+            .then((residentData) =>
                 !residentData ?
                 res.status(404).json({
                     message: 'No such resident exists'
@@ -106,12 +106,14 @@ const residentController = {
                     res.status(404).json({
                         message: 'No resident with this id!'
                     }) :
-                    res.json(residentData)
-                    .catch((err) => {
-                        console.log(err);
-                        res.status(500).json(err);
+                    res.json({
+                        message: 'Friended!'
                     });
-            }, )
+            })
+            .catch((err) => {
+                console.log(err);
+                return res.status(500).json(err);
+            });
     },
     // Remove a friend
     removeFriend(req, res) {
@@ -119,9 +121,8 @@ const residentController = {
                 _id: req.params.residentId
             }, {
                 $pull: {
-                    thought: {
-                        thoughtId: req.params.thoughtId
-                    }
+                    friends: req.params.friendId
+
                 }
             }, {
                 runValidators: true,
@@ -134,7 +135,9 @@ const residentController = {
                 .json({
                     message: 'No resident found with that ID.'
                 }) :
-                res.json(residentData)
+                res.json({
+                    message: "Unfriended!"
+                }),
             )
             .catch((err) => {
                 console.log(err);

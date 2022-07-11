@@ -28,6 +28,9 @@ const residentSchema = new Schema({
     friends: [{
         type: Schema.Types.ObjectId,
         ref: 'Resident',
+        residentName: {
+            type: String
+        }
     }, ],
 }, {
     toJSON: {

@@ -80,19 +80,11 @@ const thoughtController = {
                         new: true
                     });
             })
-            .then((residentData) => {
-                !residentData ?
-                    res.status(404).json({
-                        message: "Thought created bu no residents with that ID"
-                    }) :
-                    res.json({
-                        message: 'Thought deleted!'
-                    })
-                    .catch((err) => {
-                        console(err);
-                        res.status(500).json(err);
-                    });
-            }, )
+
+            .catch((err) => {
+                console(err);
+                res.status(500).json(err);
+            });
     },
     // Update a thought
     updateThought(req, res) {
