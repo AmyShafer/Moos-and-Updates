@@ -1,6 +1,7 @@
 const {
     Schema,
-    Types
+    Types,
+    ObjectId
 } = require('mongoose');
 
 const reactionSchema = new Schema({
@@ -10,14 +11,12 @@ const reactionSchema = new Schema({
         // Default value is set to a new ObjectId
         default: () => new Types.ObjectId(),
     },
-    reactions: {
+    reactions: [{
         // String
-        type: String,
+        type: Schema.Types.ObjectId,
         // Required
-        required: true,
-        // 280 character maximum
-        maxLength: 280,
-    },
+        ref: 'reaction',
+    }, ],
     residentName: {
         // String
         type: String,
