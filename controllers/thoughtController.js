@@ -34,7 +34,7 @@ const thoughtController = {
         Thought.create(req.body)
             .then((thoughtData) => {
                 return Resident.findOneAndUpdate({
-                    _id: req.body.residentId
+                    _id: req.params.residentId
                 }, {
                     $push: {
                         residentThoughts: thoughtData._id
@@ -111,7 +111,7 @@ const thoughtController = {
         Reaction.create(req.body)
             .then((reaction) => {
                 return Thought.findOneAndUpdate({
-                    _id: req.body.thoughtId
+                    _id: req.params.thoughtId
                 }, {
                     $push: {
                         reactions: reaction._id
@@ -135,7 +135,8 @@ const thoughtController = {
     },
     // remove reaction to a thought
     removeReaction(req, res) {
-        Thought.findOneAndUpdate({
+        Thought.findOneAndUpdate(
+            {
                 _id: req.params.thoughtId
             }, {
                 $pull: {
@@ -157,7 +158,7 @@ const thoughtController = {
             .catch((err) => {
                 console.log(err);
                 res.status(500).json(err);
-            })
+            });
     },
 };
 
