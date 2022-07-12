@@ -1,6 +1,7 @@
 const {
     Thought,
-    Resident
+    Resident,
+    Reaction
 } = require('../models');
 
 const thoughtController = {
@@ -107,26 +108,26 @@ const thoughtController = {
     },
     // add reaction to a thought
     addReaction(req, res) {
-        reaction.create(req.body)
+        Reaction.create(req.body)
             .then((reaction) => {
-                return Reaction.findOneAndUpdate({
+                return Thought.findOneAndUpdate({
                     _id: req.body.thoughtId
                 }, {
-                    $addToSet: {
+                    $push: {
                         reactions: reaction._id
                     }
-                }, {
-                    new: true
-                });
+                }, );
             })
-            .then((reaction) =>
-                !reaction ?
-                res.status(404)
-                .json({
-                    message: 'Reaction created but found no thought with this id!'
-                }) :
-                res.json('Posted reaction!')
-            )
+            .then((thoughtData) => {
+                !thoughtData ?
+                    res.status(404)
+                    .json({
+                        message: 'Reaction created but found no thought with this id!'
+                    }) :
+                    res.json({
+                        message: 'Reaction added!'
+                    });
+            })
             .catch((err) => {
                 console.log(err);
                 res.status(500).json(err);

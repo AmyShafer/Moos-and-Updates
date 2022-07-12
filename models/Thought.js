@@ -2,10 +2,10 @@ const {
     Schema,
     model
 } = require('mongoose');
-const reactionSchema = require('./Reaction');
 
 // Schema to create Thought Model
-const thoughtSchema = new Schema({
+const thoughtSchema = new Schema(
+    {
     residentThoughts: {
         type: String,
         required: true
@@ -28,7 +28,7 @@ const thoughtSchema = new Schema({
     // Array of nested documents created with the reactionSchema
     reactions: [{
         type: Schema.Types.ObjectId,
-        ref: 'Reaction'
+        ref: 'reaction'
     }, ]
 }, {
     toJSON: {
