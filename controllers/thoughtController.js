@@ -135,31 +135,23 @@ const thoughtController = {
     },
     // remove reaction to a thought
     removeReaction(req, res) {
-        Thought.findOneAndUpdate(
-            {
-                _id: req.params.thoughtId
-            }, {
-                $pull: {
-                    reactions: {
-                        reactionId: req.params.reactionId
-                    }
-                }
-            }, {
-                runValidators: true,
-                new: true
+        Reaction.findOneAndRemove({
+                _id: req.params.reactionId
             })
-            .then((thoughtData => {
+            .then((thoughtData) =>
                 !thoughtData ?
-                    res.status(404).json({
-                        message: 'No thought with this id!'
-                    }) :
-                    res.json(thoughtData);
-            }))
+                res.status(404).json({
+                    message: 'No reaction with this id!'
+                }) :
+                res.json({
+                    message: "This reaction has been eaten! This is what happens when you rescue goats!"
+                })
+            )
             .catch((err) => {
                 console.log(err);
                 res.status(500).json(err);
             });
-    },
+    }
 };
 
 module.exports = thoughtController;
