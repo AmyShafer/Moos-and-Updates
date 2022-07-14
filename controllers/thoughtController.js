@@ -134,9 +134,21 @@ const thoughtController = {
             });
     },
     // remove reaction to a thought
-    removeReaction(req, res) {
-        Reaction.findOneAndRemove({
-                _id: req.params.reactionId
+    removeReaction({
+        params,
+        req,
+        body
+    }, res) {
+        Thought.findOneAndUpdate({
+                _id: req.params.thoughtId
+            }, {
+                $pull: {
+                    reactions: {
+                        reactionId: body.reactionId
+                    }
+                }
+            }, {
+                new: true
             })
             .then((thoughtData) =>
                 !thoughtData ?
