@@ -1,7 +1,6 @@
 const {
     Thought,
-    Resident,
-    Reaction
+    Resident
 } = require('../models');
 
 const thoughtController = {
@@ -108,15 +107,15 @@ const thoughtController = {
     },
     // add reaction to a thought
     addReaction(req, res) {
-        Reaction.create(req.body)
-            .then((reaction) => {
-                return Thought.findOneAndUpdate({
-                    _id: req.params.thoughtId
-                }, {
-                    $push: {
-                        reactions: reaction._id
-                    }
-                }, );
+        Thought.findOneAndUpdate({
+                _id: req.params.thoughtId
+            }, {
+                $addToSet: {
+                    reactions: req.body
+                }
+            }, {
+                runValidators: true,
+                new: true
             })
             .then((thoughtData) => {
                 !thoughtData ?
@@ -131,21 +130,21 @@ const thoughtController = {
             .catch((err) => {
                 console.log(err);
                 res.status(500).json(err);
-            });
+            })
     },
     // remove reaction to a thought
-    removeReaction({
-        params
-    }, res) {
+    removeReaction(req, res) {
+
         Thought.findOneAndUpdate({
-                _id: params.thoughtId
+                _id: req.params.thoughtId
             }, {
                 $pull: {
                     reactions: {
-                        reactionId: params.reactionId
+                        reactionId: req.params.reactionId
                     }
                 }
             }, {
+                runValidators: true,
                 new: true
             })
             .then((thoughtData) =>
@@ -161,7 +160,7 @@ const thoughtController = {
                 console.log(err);
                 res.status(500).json(err);
             });
-    }
+    },
 };
 
 module.exports = thoughtController;
