@@ -21,7 +21,7 @@ This project used the technologies Node.js, Express.js, MongoDB, Mongoose, and J
 
 ## Mockup
 
-To start, open VS Code's Terminal and type "npm run seed" to seed the database. 
+To start, open VS Code's Terminal and type "npm run seed" to seed the database.
 
 <img src="assets/mau1.png" alt="command 1" width="400"/>
 
@@ -48,19 +48,19 @@ I needed to read up on some particulars of Mongoose.
 
 In the future, I would like the residents to have links to the appropriate biography page on the Woodstock Farm Sanctuary website.
 
-I believe that my resident schema still needs a little work. 
+I believe that my resident schema still needs a little work.
 
 ## Walk Through Video
 
 Watch my walkthrough video to learn how to use my application:
 
-<a href="https://drive.google.com/file/d/1K3mh3A7Qq4UCWFvo6QAJyZSk4phIug2_/view?usp=sharing" target="_blank_">Moos and Updates Walk Through Video</a>
+<a href="https://drive.google.com/file/d/1K3mh3A7Qq4UCWFvo6QAJyZSk4phIug2_/view?usp=sharing" target="_blank">Moos and Updates Walk Through Video</a>
 
 ## Github url
 
 You can find the Moos and Updates Repository here:
 
-<a href="https://github.com/AmyShafer/Moos-and-Updates" target="_blank_">Moos and Updates Repository</a> 
+<a href="https://github.com/AmyShafer/Moos-and-Updates" target="_blank">Moos and Updates Repository</a>
 
 ## Learn More
 
@@ -70,7 +70,7 @@ From the organization's website:
 
 You can learn more about WFS's efforts by clicking the link below.
 
-<a href="https://woodstocksanctuary.org/" target="_blank_">Woodstock Farm Sanctuary</a> 
+<a href="https://woodstocksanctuary.org/" target="_blank">Woodstock Farm Sanctuary</a>
 
 ## MIT License
 
