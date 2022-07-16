@@ -88,7 +88,7 @@ const getEmail = () => {
     let randArrItem = getRandomArrItem(animals);
     let index = animals.indexOf(randArrItem);
     animals.splice(index, 1);
-    return `${randArrItem}@woodstock.org`;
+    return `${randArrItem}@woodstocksanctuary.org`;
 };
 
 // Get friends

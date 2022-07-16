@@ -45,7 +45,7 @@ const thoughtController = {
             .then((residentData) => {
                 !residentData ?
                     res.status(404).json({
-                        message: "Thought created but there was not a resident with that id, That will cost you an extra carrot."
+                        message: "Thought created but there was not a resident with that id. That will cost you an extra carrot."
                     }) :
                     res.json({
                         message: "Thought created! That can fun. Now it is time for a nap."

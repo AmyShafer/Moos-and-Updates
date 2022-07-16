@@ -53,16 +53,19 @@ I believe that my resident schema still needs a little work.
 ## Walk Through Video
 
 Watch my walkthrough video to learn how to use my application:
+
 [Moos and Updates Walk Through Video](--)
 
 ## Github url
 
 You can find the Moos and Updates Repository here:
+
 [Moos and Updates Repository](https://github.com/AmyShafer/Moos-and-Updates)
 
 ## Learn More
 
-From the organization's website,
+From the organization's website:
+
 "Woodstock Farm Sanctuary rescues farmed animals that are often victims of cruelty and neglect. Many of the residents have escaped slaughterhouses, have been rescued from closing farms and auctions, or are surrendered to us. When we say yes to rescuing an animal, we say yes to providing them love and care for the rest of their life."
 
 You can learn more about WFS's efforts by clicking the link below.
