@@ -54,13 +54,13 @@ I believe that my resident schema still needs a little work.
 
 Watch my walkthrough video to learn how to use my application:
 
-[Moos and Updates Walk Through Video](--)
+<a href="https://drive.google.com/file/d/1K3mh3A7Qq4UCWFvo6QAJyZSk4phIug2_/view?usp=sharing" target="_blank_">Moos and Updates Walk Through Video</a>
 
 ## Github url
 
 You can find the Moos and Updates Repository here:
 
-[Moos and Updates Repository](https://github.com/AmyShafer/Moos-and-Updates)
+<a href="https://github.com/AmyShafer/Moos-and-Updates" target="_blank_">Moos and Updates Repository</a> 
 
 ## Learn More
 
@@ -70,7 +70,7 @@ From the organization's website:
 
 You can learn more about WFS's efforts by clicking the link below.
 
-- [Woodstock Farm Sanctuary](https://woodstocksanctuary.org/)
+<a href="https://woodstocksanctuary.org/" target="_blank_">Woodstock Farm Sanctuary</a> 
 
 ## MIT License
 
