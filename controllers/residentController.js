@@ -27,7 +27,7 @@ const residentController = {
             .then((residentData) => {
                 !residentData ?
                     res.status(404).json({
-                        message: "No resident with that ID"
+                        message: "No resident with that ID. It would be-hoove you to check the ID again."
                     }) :
                     res.json(residentData);
             })
@@ -52,7 +52,7 @@ const residentController = {
             .then((residentData) => {
                 !residentData ?
                     res.status(404).json({
-                        message: 'No such resident exists'
+                        message: "No such resident exists here. Maybe try Catskills Sanctuary."
                     }) :
                     res.json(residentData)
             })
@@ -69,7 +69,7 @@ const residentController = {
             .then((residentData) =>
                 !residentData ?
                 res.status(404).json({
-                    message: 'No such resident exists'
+                    message: "No such resident exists. It is possible they were adopted."
                 }) :
                 //     res.json(residentData)
                 // )
@@ -81,7 +81,7 @@ const residentController = {
                 })
                 .then(() => {
                     res.json({
-                        message: 'Resident and their thoughts have been deleted!'
+                        message: "Gone but not forgotten."
                     });
                 })
                 .catch((err) => {
@@ -104,10 +104,10 @@ const residentController = {
             .then((residentData) => {
                 !residentData ?
                     res.status(404).json({
-                        message: 'No resident with this id!'
+                        message: "No resident with this id. Can I interest you in sponsoring a duck?"
                     }) :
                     res.json({
-                        message: 'Friended!'
+                        message: "Friended!"
                     });
             })
             .catch((err) => {
@@ -133,10 +133,10 @@ const residentController = {
                 res
                 .status(404)
                 .json({
-                    message: 'No resident found with that ID.'
+                    message: "No resident with this id. Have you checked out our merch store?"
                 }) :
                 res.json({
-                    message: "Unfriended!"
+                    message: "Unfriended. That's too bad."
                 }),
             )
             .catch((err) => {

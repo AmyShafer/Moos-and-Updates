@@ -21,13 +21,16 @@ This project used the technologies Node.js, Express.js, MongoDB, Mongoose, and J
 
 ## Mockup
 
---
+To start, open VS Code's Terminal and type "npm run seed" to seed the database. 
+
 <img src="assets/mau1.png" alt="command 1" width="400"/>
 
---
+Second, type "npm start" to start the database.
+
 <img src="assets/mau2.png" alt="command 2" width="400"/>
 
---
+Now, you can see the database is ready or "The barn door's are open!"
+
 <img src="assets/mau3.png" alt="command 3" width="400"/>
 
 ## Resources Used
@@ -45,7 +48,7 @@ I needed to read up on some particulars of Mongoose.
 
 In the future, I would like the residents to have links to the appropriate biography page on the Woodstock Farm Sanctuary website.
 
-I would also like to improve the email address function and make the addresses more fun.
+I believe that my resident schema still needs a little work. 
 
 ## Walk Through Video
 

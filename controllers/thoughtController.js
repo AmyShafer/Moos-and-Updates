@@ -22,7 +22,7 @@ const thoughtController = {
             .then((thoughtData) => {
                 !thoughtData ?
                     res.status(404).json({
-                        message: "No thoughts here with that ID"
+                        message: "No thoughts here with that ID. Go-at Figure. Sorry, please don't leave! There are so many good animals puns!"
                     }) :
                     res.json(thoughtData)
             })
@@ -45,10 +45,10 @@ const thoughtController = {
             .then((residentData) => {
                 !residentData ?
                     res.status(404).json({
-                        message: 'Thought created but there is no resident with this id!'
+                        message: "Thought created but there was not a resident with that id, That will cost you an extra carrot."
                     }) :
                     res.json({
-                        message: 'Thought created!'
+                        message: "Thought created! That can fun. Now it is time for a nap."
                     });
             })
             .catch((err) => {
@@ -64,10 +64,10 @@ const thoughtController = {
             .then((thoughtData) => {
                 !thoughtData ?
                     res.status(404).json({
-                        message: "No thought with that ID here!"
+                        message: "No thought with that ID here. Maybe ask a human to help you. You are a human? Well, maybe take a sun break. That always helps me find my thoughts."
                     }) :
                     res.json({
-                        message: 'Thought deleted!'
+                        message: "Thought deleted! We fed it to the pigs!"
                     }),
 
                     Resident.findOneAndUpdate({
@@ -99,7 +99,7 @@ const thoughtController = {
             .then((thoughtData) =>
                 !thoughtData ?
                 res.status(404).json({
-                    message: "No thought with that ID here!"
+                    message: "No thought with that ID here! Too baaaaa-d!"
                 }) :
                 res.json(thoughtData)
             )
@@ -121,10 +121,10 @@ const thoughtController = {
                 !thoughtData ?
                     res.status(404)
                     .json({
-                        message: 'Reaction created but found no thought with this id!'
+                        message: "Reaction created but found no thought with this id. A belly run would be very appreciated for the extra effort on my part."
                     }) :
                     res.json({
-                        message: 'Reaction added!'
+                        message: "Reaction added. The barn will be so pleased!"
                     });
             })
             .catch((err) => {
@@ -150,7 +150,7 @@ const thoughtController = {
             .then((thoughtData) =>
                 !thoughtData ?
                 res.status(404).json({
-                    message: 'No reaction with this id!'
+                    message: "No reaction with this id. Have you checked the pasture?"
                 }) :
                 res.json({
                     message: "This reaction has been eaten! This is what happens when you rescue goats!"
